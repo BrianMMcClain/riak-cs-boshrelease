@@ -10,6 +10,8 @@ export HOME=/var/vcap
 
 export PATH=/var/vcap/packages/git/bin:/var/vcap/packages/otp/bin:$PATH
 
+apt-get -y install libpam0g-dev
+
 tar xfv riak/riak-riak-2.0.5.tar.gz
 cd riak-riak-2.0.5
 make locked-deps
