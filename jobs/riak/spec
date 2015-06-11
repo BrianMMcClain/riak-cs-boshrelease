@@ -1,12 +1,11 @@
 ---
-name: riak-cs
+name: riak
 packages:
 - otp
-- riak-cs
+- riak
 templates:
-  bin/riak-cs_ctl: bin/riak-cs_ctl
+  bin/riak_ctl: bin/riak_ctl
   bin/monit_debugger: bin/monit_debugger
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
-  config/riak-cs.conf.erb: config/riak-cs.conf

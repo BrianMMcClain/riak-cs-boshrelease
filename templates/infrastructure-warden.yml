@@ -12,19 +12,16 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: riak_cs_leader_z1
+  - name: riak_z1
     instances: 1
     networks:
       - name: riak_cs1
         static_ips: (( static_ips(0) ))
   - name: riak_cs_z1
-    instances: 2
+    instances: 1
     networks:
       - name: riak_cs1
-        static_ips: ~
-    properties:
-      riak_cs:
-        leader_address: (( jobs.riak_cs_leader_z1.networks.riak_cs1.static_ips.[0] ))
+        static_ips: (( static_ips(1) ))
 
 compilation:
   cloud_properties:
@@ -42,65 +39,65 @@ networks:
   subnets:
   - cloud_properties:
       name: random
-    range: 10.244.2.0/30
+    range: 10.244.2.0/24
     reserved:
-    - 10.244.2.1
+    - 10.244.2.1-10.244.2.20
     static:
-    - 10.244.2.2
+    - 10.244.2.21-10.244.2.30
 
-  - cloud_properties:
-      name: random
-    range: 10.244.2.4/30
-    reserved:
-    - 10.244.2.5
-    static: []
-  - cloud_properties:
-      name: random
-    range: 10.244.2.8/30
-    reserved:
-    - 10.244.2.9
-    static: []
-  - cloud_properties:
-      name: random
-    range: 10.244.2.12/30
-    reserved:
-    - 10.244.2.13
-    static: []
-  - cloud_properties:
-      name: random
-    range: 10.244.2.16/30
-    reserved:
-    - 10.244.2.17
-    static: []
+  # - cloud_properties:
+  #     name: random
+  #   range: 10.244.2.7/30
+  #   reserved:
+  #   - 10.244.2.4
+  #   static: []
+  # - cloud_properties:
+  #     name: random
+  #   range: 10.244.2.8/30
+  #   reserved:
+  #   - 10.244.2.9
+  #   static: []
+  # - cloud_properties:
+  #     name: random
+  #   range: 10.244.2.12/30
+  #   reserved:
+  #   - 10.244.2.13
+  #   static: []
+  # - cloud_properties:
+  #     name: random
+  #   range: 10.244.2.16/30
+  #   reserved:
+  #   - 10.244.2.17
+  #   static: []
 
   # Bonus double-sized network required due to BOSH oddity
-  - cloud_properties:
-      name: random
-    range: 10.244.2.20/30
-    reserved:
-    - 10.244.2.21
-    static: []
-  - cloud_properties:
-      name: random
-    range: 10.244.2.24/30
-    reserved:
-    - 10.244.2.25
-    static: []
-  - cloud_properties:
-      name: random
-    range: 10.244.2.28/30
-    reserved:
-    - 10.244.2.29
-    static: []
-  - cloud_properties:
-      name: random
-    range: 10.244.2.32/30
-    reserved:
-    - 10.244.2.33
-    static: []
-  - cloud_properties:
-      name: random
-    range: 10.244.2.36/30
-    reserved:
-    - 10.244.2.37
-    static: []
+  # - cloud_properties:
+  #     name: random
+  #   range: 10.244.2.20/30
+  #   reserved:
+  #   - 10.244.2.21
+  #   static: []
+  # - cloud_properties:
+  #     name: random
+  #   range: 10.244.2.24/30
+  #   reserved:
+  #   - 10.244.2.25
+  #   static: []
+  # - cloud_properties:
+  #     name: random
+  #   range: 10.244.2.28/30
+  #   reserved:
+  #   - 10.244.2.29
+  #   static: []
+  # - cloud_properties:
+  #     name: random
+  #   range: 10.244.2.32/30
+  #   reserved:
+  #   - 10.244.2.33
+  #   static: []
+  # - cloud_properties:
+  #     name: random
+  #   range: 10.244.2.36/30
+  #   reserved:
+  #   - 10.244.2.37
+  #   static: []

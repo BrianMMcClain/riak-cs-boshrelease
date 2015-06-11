@@ -1,5 +1,5 @@
-check process riak_cs
-  with pidfile /var/vcap/sys/run/riak_cs/riak_cs.pid
-  start program "/var/vcap/jobs/riak_cs/bin/monit_debugger riak_cs_ctl '/var/vcap/jobs/riak_cs/bin/riak_cs_ctl start'"
-  stop program "/var/vcap/jobs/riak_cs/bin/monit_debugger riak_cs_ctl '/var/vcap/jobs/riak_cs/bin/riak_cs_ctl stop'"
+check process riak-cs
+  with pidfile /var/vcap/sys/run/riak-cs/riak-cs.pid
+  start program "/var/vcap/jobs/riak-cs/bin/monit_debugger riak-cs_ctl '/var/vcap/jobs/riak-cs/bin/riak-cs_ctl start'"
+  stop program "/var/vcap/jobs/riak-cs/bin/monit_debugger riak-cs_ctl '/var/vcap/jobs/riak-cs/bin/riak-cs_ctl stop'"
   group vcap

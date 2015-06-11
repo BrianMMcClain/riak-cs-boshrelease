@@ -1,0 +1,7 @@
+---
+name: riak
+dependencies:
+- otp
+- git
+files:
+- riak/riak-riak-2.0.5.tar.gz

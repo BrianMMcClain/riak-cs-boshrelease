@@ -1,0 +1,22 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+# Detect # of CPUs so make jobs can be parallelized
+CPUS=$(grep -c ^processor /proc/cpuinfo)
+ # Available variables
+# $BOSH_COMPILE_TARGET - where this package & spec'd source files are available
+# $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
+export HOME=/var/vcap
+
+BUILDFLAGS="--enable-smp-support --prefix=${BOSH_INSTALL_TARGET} --without-odbc"
+BASHO_CFLAGS="-g -O2 -DERTS_FRMPTR"
+BASHO_LDFLAGS="-g"
+
+tar xfv otp/otp-OTP_R16B02_basho8.tar.gz
+cd otp-OTP_R16B02_basho8
+
+apt-get -y install autoconf
+./otp_build autoconf
+env CFLAGS="$BASHO_CFLAGS" LDFLAGS="$BASHO_LDFLAGS" ./configure ${BUILDFLAGS}
+make -j${CPUS}
+make install

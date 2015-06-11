@@ -1,0 +1,7 @@
+---
+name: stanchion
+dependencies:
+- otp
+- git
+files:
+- stanchion/stanchion-2.0.0.tar.gz

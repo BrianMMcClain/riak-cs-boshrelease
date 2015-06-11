@@ -9,15 +9,18 @@ update:
   serial: false
 
 jobs:
-  - name: riak_cs_leader_z1
+  - name: riak_z1
     templates:
-    - name: riak-cs
+    - name: riak
       release: riak-cs
     instances: 0
     resource_pool: small_z1
     networks: (( merge ))
     persistent_disk: 0
+    update:
+      canaries: 10
     properties: {}
+
   - name: riak_cs_z1
     templates:
     - name: riak-cs
@@ -28,9 +31,7 @@ jobs:
     persistent_disk: 0
     update:
       canaries: 10
-    properties:
-      riak_cs:
-        leader_address: (( merge ))
+    properties: {}
 
 networks: (( merge ))
 

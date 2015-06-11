@@ -1,1 +1,25 @@
---- {}
+---
+git/git-1.8.4.tar.gz:
+  object_id: 81a5e071-39f9-4e09-bb35-c7733c13c4bd
+  sha: a238f2b527365b896b8ec447b3e5ab5d7b4a2c5a
+  size: 4657745
+otp/otp-OTP_R16B02_basho8.tar.gz:
+  object_id: 2eb658c6-6452-43cd-bf0d-ed653c41727a
+  sha: 9aa77b755a70031e18bf9511d0c591c09f213114
+  size: 32698586
+riak/riak-riak-2.0.5.tar.gz:
+  object_id: b92d3657-8621-468d-9e58-54c824f66605
+  sha: 2a388ef09c5fe4db71ffe6d8b3a3497825387484
+  size: 383161
+riak-cs/riak_cs-2.0.1.tar.gz:
+  object_id: d8a177d4-57cc-4d05-bb66-0980a3cf089c
+  sha: 3330ad20d1d75153a7a38d7e51d6ab51377d4697
+  size: 9734438
+stanchion/stanchion-2.0.0.tar.gz:
+  object_id: 550bfc82-43a6-451a-9eef-53c89aad57cd
+  sha: e26cf4ab7243abaec8a417d9b082f3c21d0895fb
+  size: 209843
+riak-cs/riak-cs-2.0.1.tar.gz:
+  object_id: 4f5b26c1-1c09-49c7-93f9-468918a4b704
+  sha: 3330ad20d1d75153a7a38d7e51d6ab51377d4697
+  size: 9734438

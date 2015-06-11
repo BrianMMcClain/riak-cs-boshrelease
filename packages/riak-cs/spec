@@ -1,0 +1,7 @@
+---
+name: riak-cs
+dependencies:
+- otp
+- git
+files:
+- riak-cs/riak-cs-2.0.1.tar.gz
