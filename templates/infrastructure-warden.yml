@@ -39,65 +39,24 @@ networks:
   subnets:
   - cloud_properties:
       name: random
-    range: 10.244.2.0/24
+      type: manual
+    range: 10.244.2.0/30
     reserved:
-    - 10.244.2.1-10.244.2.20
+    - 10.244.2.1
     static:
-    - 10.244.2.21-10.244.2.30
+    - 10.244.2.2
 
-  # - cloud_properties:
-  #     name: random
-  #   range: 10.244.2.7/30
-  #   reserved:
-  #   - 10.244.2.4
-  #   static: []
-  # - cloud_properties:
-  #     name: random
-  #   range: 10.244.2.8/30
-  #   reserved:
-  #   - 10.244.2.9
-  #   static: []
-  # - cloud_properties:
-  #     name: random
-  #   range: 10.244.2.12/30
-  #   reserved:
-  #   - 10.244.2.13
-  #   static: []
-  # - cloud_properties:
-  #     name: random
-  #   range: 10.244.2.16/30
-  #   reserved:
-  #   - 10.244.2.17
-  #   static: []
+  - cloud_properties:
+      name: random
+      type: manual
+    range: 10.244.2.4/30
+    reserved: []
+    static:
+    - 10.244.2.5-10.244.2.6
 
-  # Bonus double-sized network required due to BOSH oddity
-  # - cloud_properties:
-  #     name: random
-  #   range: 10.244.2.20/30
-  #   reserved:
-  #   - 10.244.2.21
-  #   static: []
-  # - cloud_properties:
-  #     name: random
-  #   range: 10.244.2.24/30
-  #   reserved:
-  #   - 10.244.2.25
-  #   static: []
-  # - cloud_properties:
-  #     name: random
-  #   range: 10.244.2.28/30
-  #   reserved:
-  #   - 10.244.2.29
-  #   static: []
-  # - cloud_properties:
-  #     name: random
-  #   range: 10.244.2.32/30
-  #   reserved:
-  #   - 10.244.2.33
-  #   static: []
-  # - cloud_properties:
-  #     name: random
-  #   range: 10.244.2.36/30
-  #   reserved:
-  #   - 10.244.2.37
-  #   static: []
+  - cloud_properties:
+      name: random
+      type: manual
+    range: 10.244.2.8/30
+    reserved: []
+    static: []
